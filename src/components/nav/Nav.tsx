@@ -15,7 +15,7 @@ export const Nav = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-            offset={-200}
+             offset={-65}
             title="Home"
           >
             <BiHomeAlt />
@@ -26,7 +26,7 @@ export const Nav = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-            offset={-200}
+             offset={-65}
             title="About"
           >
             <BiUser />
@@ -38,7 +38,7 @@ export const Nav = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-            offset={-200}
+             offset={-65}
             title="Services"
           >
             <BsClipboardData />
@@ -49,7 +49,7 @@ export const Nav = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-            offset={-200}
+             offset={-65}
             title="Work"
           >
             <BsBriefcase />
@@ -60,7 +60,7 @@ export const Nav = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-            offset={-200}
+             offset={-65}
             title="Contact"
           >
             <BsChatSquare />

@@ -6,9 +6,12 @@ import { fadeIn } from "@/variants";
 export const About = () => {
   const [ref, InView] = useInView({ threshold: 0.5 });
   return (
-    <section className="section" id="about" ref={ref}>
-      <div className="container mx-auto">
-        <div className="flex flex-col gap-y-10 md:flex-row md:items-center md:gap-y-0">
+    <section className="section h-screen max-h-screen overflow-hidden" ref={ref}>
+      <div 
+      className="container mx-auto">
+        <div 
+         id="about"
+        className="flex flex-col gap-y-10 md:flex-row md:items-center md:gap-y-0">
           {/*image */}
           <motion.div
             variants={fadeIn("right", 0.3)}
