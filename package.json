@@ -1,15 +1,15 @@
 {
-  "homepage": "mariaeduardapedroso.github.io/front-paginaTutu",
+  "homepage": "armassaro.github.io/front-paginaTutu",
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "start": "vite",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
