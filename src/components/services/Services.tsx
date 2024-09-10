@@ -38,11 +38,13 @@ export const Services = () => {
                 return (
                   <div
                     key={index}
-                    className="border-2 border-white/20 border-solid rounded-2xl p-2 mb-2 shadow-yellow-100 shadow-md hover:scale-105 transition duration-700 ease-out"
+                    className="border-2 group border-solid rounded-2xl p-2 mb-2 hover:scale-105 transition duration-700 ease-out"
                   >
-                    <div className="leading-normal">
-                      <h4 className="text-2xl font-semibold font-primary leading-loose">
+                    <div className="leading-normal group">
+                      <h4 className="text-2xl font-semibold font-primary leading-loose relative w-fit">
                         {name}
+                        <div
+                        className="absolute bottom-1 group-hover:w-full w-0 bg-white h-[1px] transition-all ease-in-out duration-300"/>
                       </h4>
                       <p className="font-secondary">{description}</p>
                     </div>

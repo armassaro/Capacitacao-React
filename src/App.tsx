@@ -6,6 +6,7 @@ import { Services } from "@/components/services/Services";
 import { Work } from "@/components/work/Work";
 import { Contact } from "@/components/contact/Contact";
 import { Footer } from "./components/footer/Footer";
+import { useEffect } from "react";
 
 const App = () => {
   return (

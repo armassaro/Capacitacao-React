@@ -3,8 +3,41 @@ import { FaGithub, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/variants";
+import { useEffect, useRef, useState } from "react";
 
 export const Banner = () => {
+  const [iconHovered, setIconHovered] = useState<keyof typeof socialMedia | "">("");
+  const ref = useRef(null);
+
+  const socialMedia = {
+    "github": {
+      url: "https://github.com/armassaro",
+      icon: <FaGithub/>
+    },
+    "facebook": {
+      url: "https://google.com",
+      icon: <FaFacebook/>
+    },
+    "linkedin": {
+      url: "https://br.linkedin.com/in/arthur-romano-massaro-465a61264",
+      icon: <FaLinkedin/>
+    }
+  }
+
+  const [renderingUrl, setRenderingUrl] = useState(false);
+
+  useEffect(() => {
+    if(iconHovered === "") {
+      const timer = setTimeout(() => {
+        setRenderingUrl(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+    else {
+      setRenderingUrl(true);
+    }
+  }, [iconHovered])
+
   return (
     <section 
     className="section flex items-center h-screen max-h-screen overflow-hidden" 
@@ -51,21 +84,46 @@ export const Banner = () => {
               initial="hidden"
               className="flex items-center gap-x-3 max-w-max mx-auto md:mx-0 mt-5 mb-5"
             >
-              <button className="btn btn-lg hover:animate-pulse"><a href="mailto:arthurromano@therionej.com.br">Entre em contato</a></button>
-              <a className="text-gradient btn-link" href="https://arcseedai.com" target="_blank">
+              <button className="btn btn-lg hover:animate-pulse transition-all"><a href="mailto:arthurromano@therionej.com.br">Entre em contato</a></button>
+              <a className="text-gradient btn-link transition-all ease-in-out duration-300" href="https://arcseedai.com" target="_blank">
                 Meu portifolio
               </a>
             </motion.div>
-            <div className="flex gap-x-2 max-w-max mx-auto md:mx-0">
-              <a href="https://github.com/mariaeduardapedroso" target="_blank">
-                <FaGithub />
-              </a>
-              <a href="https://www.linkedin.com/in/maria-eduarda-pedroso-7671951b2/" target="_blank">
-                <FaLinkedin />
-              </a>
-              <a href="https://www.facebook.com/mariaeduarda.pedroso.397" target="_blank">
-                <FaFacebook />
-              </a>
+            <div 
+            className="flex flex-col">
+            <div 
+            onMouseLeave={() => setIconHovered("")}
+            className="flex gap-x-4 mx-auto md:mx-0 group relative min-w-[100%]">
+              {Object.entries(socialMedia).map(([key, { url, icon }]) => (
+                <div
+                className={`
+                ${iconHovered === key && `outline outline-[1px] outline-white outline-offset-2 rounded-sm`}`}>
+                <a
+                onMouseEnter={() => {setIconHovered(key)}}
+                  key={key}
+                  href={url}
+                  target="_blank"
+                  className={`transition-all ease-in-out duration-300 text-xl scale-100
+                    ${iconHovered === "" ? `opacity-100` : 
+                      iconHovered === key ? `opacity-100` : `opacity-0` }`}
+                >
+                  {icon}
+                </a>
+                </div>
+              ))}
+            </div>
+            <div
+            className="w-full h-[1px] relative">
+            <div 
+            className={`
+            ${iconHovered !== "" ? `w-full opacity-100` : `w-0 opacity-0`}
+            transition-all ease-in-out duration-300 border-b-[1px]
+            border-solid border-white absolute text-nowrap top-0 flex
+            `}>
+              {socialMedia[iconHovered]?.url}<p className="text-transparent">.</p>
+            </div>
+            <p className="text-transparent opacity-0">text</p>
+            </div>
             </div>
           </div>
           {/* IMAGE */}

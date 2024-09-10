@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 type Props = {};
 
 export const Footer = (props: Props) => {
-  const styleLink = "cursor-pointer flex items-center gap-x-2";
+  const styleLink = "cursor-pointer flex items-center gap-x-2 ease-in-out transition-colors duration-300 hover:text-[#ff00ff]";
 
   return (
     <footer className="shadow-lg py-16 w-full mt-16" id="footer">
@@ -13,12 +13,12 @@ export const Footer = (props: Props) => {
         <div className="flex lg:flex-row mb-10 justify-between">
           <div className="flex">
             <a href="" className="text-gradient">
-              Maria <br />
-              <span className="text-white">Eduarda</span>
+              Tutu <br />
+              <span className="text-white">Da Massa</span>
             </a>
           </div>
           <div className="flex flex-col lg:basis-1/2">
-            <h3 className="h3">FullStack Developer</h3>
+            <h3 className="h3">Front-end Developer</h3>
           </div>
           <div className="flex-col flex">
             <Link
@@ -35,7 +35,7 @@ export const Footer = (props: Props) => {
             <Link
               to="about"
               className={styleLink}
-              activeClass="border-b text-accent"
+              activeClass="border-b hover:text-accent ease-in-out transition-all duration-300"
               smooth={true}
               spy={true}
               offset={-200}
@@ -47,7 +47,7 @@ export const Footer = (props: Props) => {
             <Link
               to="services"
               className={styleLink}
-              activeClass="border-b text-accent"
+              activeClass="border-b hover:text-accent ease-in-out transition-all duration-300"
               smooth={true}
               spy={true}
               offset={-200}
@@ -59,7 +59,7 @@ export const Footer = (props: Props) => {
             <Link
               to="work"
               className={styleLink}
-              activeClass="border-b text-accent"
+              activeClass="border-b hover:text-accent ease-in-out transition-all duration-300"
               smooth={true}
               spy={true}
               offset={-200}
@@ -70,7 +70,7 @@ export const Footer = (props: Props) => {
             <Link
               to="contact"
               className={styleLink}
-              activeClass="border-b text-accent"
+              activeClass="hover:text-accent ease-in-out transition-all duration-300"
               smooth={true}
               spy={true}
               offset={-200}

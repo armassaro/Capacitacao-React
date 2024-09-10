@@ -6,16 +6,16 @@ export const Nav = () => {
   const styleLink =
     "cursor-pointer w-[60px] h-[60px] flex items-center justify-center";
   return (
-    <nav className="fixed bottom-2 lg:bottom-7 w-full overflow-hidden z-50">
+    <nav className="fixed bottom-1 lg:bottom-7 w-full overflow-hidden z-50">
       <div className="container mx-auto">
-        <div className="bg-black/90 w-full h-[96px] backdrop-blur-2xl rounded-full max-w-[460px] px-5 mx-auto flex items-center justify-between text-2xl text-yellow-50 z-50">
+        <div className="bg-black/90 w-full h-[] backdrop-blur-2xl rounded-full max-w-[460px] px-5 mx-auto flex items-center justify-between text-2xl text-yellow-50 z-50">
           <Link
             to="home"
             className={styleLink}
             activeClass="active"
             smooth={true}
             spy={true}
-             offset={-65}
+             offset={0}
             title="Home"
           >
             <BiHomeAlt />
@@ -26,7 +26,7 @@ export const Nav = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-             offset={-65}
+             offset={0}
             title="About"
           >
             <BiUser />
@@ -38,7 +38,7 @@ export const Nav = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-             offset={-65}
+             offset={0}
             title="Services"
           >
             <BsClipboardData />
@@ -49,7 +49,7 @@ export const Nav = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-             offset={-65}
+             offset={0}
             title="Work"
           >
             <BsBriefcase />
@@ -60,7 +60,7 @@ export const Nav = () => {
             activeClass="active"
             smooth={true}
             spy={true}
-             offset={-65}
+             offset={0}
             title="Contact"
           >
             <BsChatSquare />
